@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WAKUチャット</title>
+  <title>WAKU</title>
+  <style>
+    body {
+      background: #1fb56c;
+      text-align: center;
+      font-family: sans-serif;
+    }
+    button {
+      display: block;
+      width: 200px;
+      margin: 15px auto;
+      padding: 15px;
+      font-size: 18px;
+    }
+    #chatBox {
+      height: 200px;
+      overflow: auto;
+      background: white;
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>グループチャット</h1>
+<!-- ホーム -->
+<div id="home">
+  <h1>WAKU</h1>
+  <p>ちょっと外へ、つながる世界</p>
 
-  <div id="chat"></div>
+  <button onclick="show('chat')">会話</button>
+  <button onclick="show('health')">健康記録</button>
+</div>
 
+<!-- チャット -->
+<div id="chat" style="display:none">
+  <h2>グループチャット</h2>
+  <div id="chatBox"></div>
   <input id="input">
   <button onclick="send()">送信</button>
+  <button onclick="show('home')">戻る</button>
+</div>
 
-  <script src="script.js"></script>
+<!-- 健康記録 -->
+<div id="health" style="display:none">
+  <h2>健康記録</h2>
+  <button onclick="record()">記録する</button>
+  <p id="result"></p>
+  <button onclick="show('home')">戻る</button>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
